@@ -41,12 +41,24 @@ namespace RestWithASPNETUdemy.Repository
             }
             return result;
         }
-
+        public User ValidateCredentials(string username)
+        {
+            return _context.Users.SingleOrDefault(u => u.UserName == username);
+        }
+        public bool RevokeToken(string username)
+        {
+            var user = _context.Users.SingleOrDefault(u => u.UserName == username);
+            if (user is null) return false;
+            user.RefreshToken = null;
+            _context.SaveChanges();
+            return true;
+        }
         private string ComputeHash(string password, SHA256CryptoServiceProvider algorithm)
         {
             Byte[] inputBytes = Encoding.UTF8.GetBytes(password);
             Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
             return BitConverter.ToString(hashedBytes);
         }
+
     }
 }
