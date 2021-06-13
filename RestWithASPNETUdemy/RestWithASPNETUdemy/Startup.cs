@@ -90,7 +90,8 @@ namespace RestWithASPNETUdemy
             }));
             services.AddControllers();
             //var connection = Configuration["MySqlConnection: MySqlConnectionString"];
-            var connection = "Server=db;DataBase=rest_with_asp_net;Uid=root;Pwd=docker;SslMode=none;";
+            //var connection = "Server=db;DataBase=rest_with_asp_net;Uid=root;Pwd=docker;SslMode=none;";
+            var connection = "Server=liciomachado-db-server.mysql.database.azure.com; Port=3306; Database=rest_with_asp_net; Uid=liciomachado@liciomachado-db-server; Pwd=9415524Ma; SslMode=Preferred;";
             services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
 
             //if (Environment.IsDevelopment())
@@ -132,7 +133,7 @@ namespace RestWithASPNETUdemy
             {
                 c.SwaggerDoc("v1", new OpenApiInfo 
                 { 
-                    Title = "REST API's with ASP.NET", 
+                    Title = "REST API's with ASP.NET and Docker - Foo bar", 
                     Version = "v1",
                     Contact = new OpenApiContact
                     {
