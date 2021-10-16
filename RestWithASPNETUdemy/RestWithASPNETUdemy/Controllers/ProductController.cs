@@ -12,61 +12,61 @@ namespace RestWithASPNETUdemy.Controllers
     [ApiController]
     [Authorize("Bearer")]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class BookController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly ILogger<BookController> _logger;
-        private readonly IBookBusiness _BookBusiness;
+        private readonly ILogger<ProductController> _logger;
+        private readonly IProductBusiness _ProductBusiness;
 
-        public BookController(ILogger<BookController> logger, IBookBusiness BookBusiness)
+        public ProductController(ILogger<ProductController> logger, IProductBusiness ProductBusiness)
         {
             _logger = logger;
-            _BookBusiness = BookBusiness;
+            _ProductBusiness = ProductBusiness;
         }
 
         [HttpGet]
         [TypeFilter(typeof(HyperMediaFilter))]
-        [ProducesResponseType((200), Type = typeof(List<BookVO>))]
+        [ProducesResponseType((200), Type = typeof(List<ProductVO>))]
         [ProducesResponseType((204))]
         [ProducesResponseType((400))]
         [ProducesResponseType((401))]
         public IActionResult Get()
         {
-            return Ok(_BookBusiness.FindAll());
+            return Ok(_ProductBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
         [TypeFilter(typeof(HyperMediaFilter))]
-        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType((200), Type = typeof(ProductVO))]
         [ProducesResponseType((204))]
         [ProducesResponseType((400))]
         [ProducesResponseType((401))]
         public IActionResult Get(long id)
         {
-            var Book = _BookBusiness.FindById(id);
-            if(Book == null) return NotFound();
-            return Ok(Book);
+            var product = _ProductBusiness.FindById(id);
+            if(product == null) return NotFound();
+            return Ok(product);
         }
 
         [HttpPost]
         [TypeFilter(typeof(HyperMediaFilter))]
-        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType((200), Type = typeof(ProductVO))]
         [ProducesResponseType((400))]
         [ProducesResponseType((401))]
-        public IActionResult Post([FromBody] BookVO Book)
+        public IActionResult Post([FromBody] ProductVO Product)
         {
-            if (Book == null) return NotFound();
-            return Ok(_BookBusiness.Create(Book));
+            if (Product == null) return NotFound();
+            return Ok(_ProductBusiness.Create(Product));
         }
 
         [HttpPut]
         [TypeFilter(typeof(HyperMediaFilter))]
-        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType((200), Type = typeof(ProductVO))]
         [ProducesResponseType((400))]
         [ProducesResponseType((401))]
-        public IActionResult Put([FromBody] BookVO Book)
+        public IActionResult Put([FromBody] ProductVO Product)
         {
-            if (Book == null) return NotFound();
-            return Ok(_BookBusiness.Update(Book));
+            if (Product == null) return NotFound();
+            return Ok(_ProductBusiness.Update(Product));
         }
 
         [HttpDelete("{id}")]
@@ -75,7 +75,7 @@ namespace RestWithASPNETUdemy.Controllers
         [ProducesResponseType((401))]
         public IActionResult Delete(long id)
         {
-            _BookBusiness.Delete(id);
+            _ProductBusiness.Delete(id);
             return NoContent();
         }
     }

@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace RestWithASPNETUdemy.Model
 {
-    [Table("books")]
-    public class Book : BaseEntity
+    [Table("products")]
+    public class Product : BaseEntity
     {
 
-        [Column("title")]
-        public string Title { get; set; }
+        [Column("item")]
+        public string Item { get; set; }
 
-        [Column("author")]
-        public string Author { get; set; }
+        [Column("description")]
+        public string Descricao { get; set; }
 
         [Column("price")]
         public decimal Price { get; set; }

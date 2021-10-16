@@ -48,6 +48,7 @@ namespace RestWithASPNETUdemy.Business.Implementations
             return new TokenVO(
                 true,
                 createDate.ToString(DATE_FORMAT),
+                user.UserName,
                 expirationDate.ToString(DATE_FORMAT),
                 accessToken,
                 refreshToken
@@ -82,6 +83,7 @@ namespace RestWithASPNETUdemy.Business.Implementations
             return new TokenVO(
                 true,
                 createDate.ToString(DATE_FORMAT),
+                username,
                 expirationDate.ToString(DATE_FORMAT),
                 accessToken,
                 refreshToken

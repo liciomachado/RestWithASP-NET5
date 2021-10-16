@@ -5,21 +5,21 @@ using System.Collections.Generic;
 
 namespace RestWithASPNETUdemy.Business.Implementations
 {
-    public class BookBusinessImplementation : IBookBusiness
+    public class ProductBusinessImplementation : IProductBusiness
     {
-        private readonly IRepository<Book> _repository;
-        private readonly BookConverter _converter;
+        private readonly IRepository<Product> _repository;
+        private readonly ProductConverter _converter;
 
 
-        public BookBusinessImplementation(IRepository<Book> repository)
+        public ProductBusinessImplementation(IRepository<Product> repository)
         {
             _repository = repository;
-            _converter = new BookConverter();
+            _converter = new ProductConverter();
         }
-        public BookVO Create(BookVO Book)
+        public ProductVO Create(ProductVO Product)
         {
 
-            var personEntity = _converter.Parse(Book);
+            var personEntity = _converter.Parse(Product);
             personEntity = _repository.Create(personEntity);
             return _converter.Parse(personEntity);
         }
@@ -29,19 +29,19 @@ namespace RestWithASPNETUdemy.Business.Implementations
             _repository.Delete(id);
         }
 
-        public List<BookVO> FindAll()
+        public List<ProductVO> FindAll()
         {
             return _converter.Parse(_repository.FindAll());
         }
 
-        public BookVO FindById(long id)
+        public ProductVO FindById(long id)
         {
             return _converter.Parse(_repository.FindById(id));
         }
 
-        public BookVO Update(BookVO Book)
+        public ProductVO Update(ProductVO Product)
         {
-            var personEntity = _converter.Parse(Book);
+            var personEntity = _converter.Parse(Product);
             personEntity = _repository.Update(personEntity);
             return _converter.Parse(personEntity);
         }

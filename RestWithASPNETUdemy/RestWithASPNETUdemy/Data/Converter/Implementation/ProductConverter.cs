@@ -6,42 +6,42 @@ using System.Linq;
 
 namespace RestWithASPNETUdemy.Data.Converter.Implementation
 {
-    public class BookConverter : IParser<BookVO, Book>, IParser<Book, BookVO>
+    public class ProductConverter : IParser<ProductVO, Product>, IParser<Product, ProductVO>
     {
-        public Book Parse(BookVO origin)
+        public Product Parse(ProductVO origin)
         {
             if (origin == null) return null;
-            return new Book
+            return new Product
             {
                 Id = origin.Id,
-                Author = origin.Author,
+                Descricao = origin.Description,
                 LaunchDate = origin.LaunchDate,
                 Price = origin.Price,
-                Title = origin.Title
+                Item = origin.Item
             };
         }
 
-        public BookVO Parse(Book origin)
+        public ProductVO Parse(Product origin)
         {
             if (origin == null) return null;
-            return new BookVO
+            return new ProductVO
             {
                 Id = origin.Id,
-                Author = origin.Author,
+                Description = origin.Descricao,
                 LaunchDate = origin.LaunchDate,
                 Price = origin.Price,
-                Title = origin.Title
+                Item = origin.Item
             };
         }
 
-        public List<Book> Parse(List<BookVO> origin)
+        public List<Product> Parse(List<ProductVO> origin)
         {
             if (origin == null) return null;
             return origin.Select(item => Parse(item)).ToList();
                   
         }
 
-        public List<BookVO> Parse(List<Book> origin)
+        public List<ProductVO> Parse(List<Product> origin)
         {
             if (origin == null) return null;
             return origin.Select(item => Parse(item)).ToList();

@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace RestWithASPNETUdemy.Model
 {
-    public class BookVO: ISupportsHyperMedia
+    public class ProductVO: ISupportsHyperMedia
     {
         public long Id { get; set; }
-        public string Title { get; set; }
+        public string Item { get; set; }
 
-        public string Author { get; set; }
+        public string Description { get; set; }
 
         public decimal Price { get; set; }
 

@@ -90,14 +90,14 @@ namespace RestWithASPNETUdemy
             }));
             services.AddControllers();
             //var connection = Configuration["MySqlConnection: MySqlConnectionString"];
-            //var connection = "Server=db;DataBase=rest_with_asp_net;Uid=root;Pwd=docker;SslMode=none;";
-            var connection = "Server=liciomachado-db-server.mysql.database.azure.com; Port=3306; Database=rest_with_asp_net; Uid=liciomachado@liciomachado-db-server; Pwd=9415524Ma; SslMode=Preferred;";
+            var connection = "Server=localhost;DataBase=rest_with_asp_net;Uid=root;Pwd=123321;SslMode=none;";
+            //var connection = "Server=liciomachado-db-server.mysql.database.azure.com; Port=3306; Database=rest_with_asp_net; Uid=liciomachado@liciomachado-db-server; Pwd=9415524Ma; SslMode=Preferred;";
             services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
 
-            //if (Environment.IsDevelopment())
-            //{
-            //    MigrateDatabase(connection);
-            //}
+            if (Environment.IsDevelopment())
+            {
+                MigrateDatabase(connection);
+            }
 
             services.AddMvc(options =>
             {
@@ -108,7 +108,7 @@ namespace RestWithASPNETUdemy
 
             var filterOptions = new HyperMediaFilterOptions();
             filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
-            filterOptions.ContentResponseEnricherList.Add(new BookEnricher());
+            filterOptions.ContentResponseEnricherList.Add(new ProductEnricher());
             services.AddSingleton(filterOptions);
 
             //Versionamento da API
@@ -119,9 +119,8 @@ namespace RestWithASPNETUdemy
 
 
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
-            services.AddScoped<IBookBusiness, BookBusinessImplementation>();
+            services.AddScoped<IProductBusiness, ProductBusinessImplementation>();
             services.AddScoped<ILoginBusiness, LoginBusinessImplementation>();
-            services.AddScoped<IFileBusiness, FileBusinessImplementation>();
 
             services.AddTransient<ITokenService, TokenService>();
 

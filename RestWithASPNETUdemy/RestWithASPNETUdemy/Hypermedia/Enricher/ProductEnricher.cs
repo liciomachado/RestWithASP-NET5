@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace RestWithASPNETUdemy.HypermediaFilterOptions.Enricher
 {
-    public class BookEnricher : ContentResponseEnricher<BookVO>
+    public class ProductEnricher : ContentResponseEnricher<ProductVO>
     {
         private readonly object _lock = new object();
-        protected override Task EnrichModel(BookVO content, IUrlHelper urlHelper)
+        protected override Task EnrichModel(ProductVO content, IUrlHelper urlHelper)
         {
-            var path = "api/v1/Book";
+            var path = "api/v1/Product";
             string link = getLink(content.Id, urlHelper, path);
             content.Links.Add(new HyperMediaLink()
             {
