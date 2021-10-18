@@ -91,7 +91,6 @@ namespace RestWithASPNETUdemy
             services.AddControllers();
             //var connection = Configuration["MySqlConnection: MySqlConnectionString"];
             var connection = "Server=localhost;DataBase=rest_with_asp_net;Uid=root;Pwd=123321;SslMode=none;";
-            //var connection = "Server=liciomachado-db-server.mysql.database.azure.com; Port=3306; Database=rest_with_asp_net; Uid=liciomachado@liciomachado-db-server; Pwd=9415524Ma; SslMode=Preferred;";
             services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
 
             if (Environment.IsDevelopment())

@@ -45,6 +45,13 @@ namespace RestWithASPNETUdemy.Repository
         {
             return _context.Users.SingleOrDefault(u => u.UserName == username);
         }
+        public User CreateUser(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            return ValidateCredentials(user.UserName);
+        }
+
         public bool RevokeToken(string username)
         {
             var user = _context.Users.SingleOrDefault(u => u.UserName == username);

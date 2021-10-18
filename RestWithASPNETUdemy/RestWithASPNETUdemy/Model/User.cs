@@ -1,19 +1,16 @@
-﻿using System;
+﻿using RestWithASPNETUdemy.Model.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestWithASPNETUdemy.Model
 {
     [Table("users")]
-    public class User
+    public class User : BaseEntity
     {
-        [Key]
-        [Column("id")]
-        public long Id { get; set; }
-
         [Column("user_name")]
-        public string UserName { get; set; }      
-        
+        public string UserName { get; set; }
+
         [Column("full_name")]
         public string FullName { get; set; }
 

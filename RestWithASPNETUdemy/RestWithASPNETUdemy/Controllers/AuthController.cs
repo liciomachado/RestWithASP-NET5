@@ -26,9 +26,19 @@ namespace RestWithASPNETUdemy.Controllers
         [Route("signin")]
         public IActionResult Signin([FromBody] UserVO user)
         {
-            if (user == null) return BadRequest("Invalid client request");
+            if (user == null) return BadRequest("Usuario ou senha inválidos");
             var token = _loginBusiness.ValidateCredentials(user);
             if (token == null) return Unauthorized();
+            return Ok(token);
+        }
+
+        [HttpPost]
+        [Route("register")]
+        public IActionResult Register([FromBody] UserVO user)
+        {
+            if (user == null) return BadRequest("Usuario ou senha inválidos");
+            var token = _loginBusiness.RegisterAndCreateCredentials(user);
+            if (token == null) return BadRequest("Este usuario já existe");
             return Ok(token);
         }
 
@@ -41,6 +51,7 @@ namespace RestWithASPNETUdemy.Controllers
             if (token == null) return BadRequest("Invalid client request");
             return Ok(token);
         }
+
 
         [HttpGet]
         [Route("revoke")]

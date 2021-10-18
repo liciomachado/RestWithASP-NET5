@@ -41,7 +41,7 @@ namespace RestWithASPNETUdemy.HypermediaFilterOptions
             {
                 if(okObjectResult.Value is T model)
                 {
-                    await EnrichModel(model, urlHelper);
+                    //await EnrichModel(model, urlHelper);
                 }
                 else if (okObjectResult.Value is List<T> collection)
                 {
