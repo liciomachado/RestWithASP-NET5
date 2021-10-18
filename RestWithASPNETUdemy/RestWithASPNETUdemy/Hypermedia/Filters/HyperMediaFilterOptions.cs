@@ -1,10 +1,10 @@
-﻿using RestWithASPNETUdemy.HypermediaFilterOptions.Abstract;
+﻿using RestCrudApi.HypermediaFilterOptions.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestWithASPNETUdemy.HypermediaFilterOptions.Filters
+namespace RestCrudApi.HypermediaFilterOptions.Filters
 {
     public class HyperMediaFilterOptions
     {

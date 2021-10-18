@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using RestWithASPNETUdemy.Model;
-using RestWithASPNETUdemy.Business;
-using RestWithASPNETUdemy.HypermediaFilterOptions.Filters;
+using RestCrudApi.Model;
+using RestCrudApi.Business;
+using RestCrudApi.HypermediaFilterOptions.Filters;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 
-namespace RestWithASPNETUdemy.Controllers
+namespace RestCrudApi.Controllers
 {
     [ApiVersion("1")]
     [ApiController]

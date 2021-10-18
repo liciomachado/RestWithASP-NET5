@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace RestWithASPNETUdemy.HypermediaFilterOptions
+namespace RestCrudApi.HypermediaFilterOptions
 {
     public class HyperMediaLink
     {

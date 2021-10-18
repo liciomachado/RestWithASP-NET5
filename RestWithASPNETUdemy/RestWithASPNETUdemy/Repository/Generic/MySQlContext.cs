@@ -1,4 +1,4 @@
-﻿namespace RestWithASPNETUdemy.Repository.Generic
+﻿namespace RestCrudApi.Repository.Generic
 {
     internal class MySQlContext
     {

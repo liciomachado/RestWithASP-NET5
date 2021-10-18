@@ -1,10 +1,10 @@
-﻿using RestWithASPNETUdemy.Data.VO;
+﻿using RestCrudApi.Data.VO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestWithASPNETUdemy.Business
+namespace RestCrudApi.Business
 {
     public interface ILoginBusiness
     {

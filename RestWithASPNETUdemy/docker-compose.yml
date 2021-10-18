@@ -22,7 +22,7 @@ services:
     image: rest-with-asp-net-udemy
     build:
       context: .
-      dockerfile: RestWithASPNETUdemy/Dockerfile
+      dockerfile: RestCrudApi/Dockerfile
     environment:
       TZ: America/Sao_Paulo
       ASPNETCORE_ENVIRONMENT: Production

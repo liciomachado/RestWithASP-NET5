@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RestWithASPNETUdemy.HypermediaFilterOptions.Abstract
+namespace RestCrudApi.HypermediaFilterOptions.Abstract
 {
     public interface ISupportsHyperMedia
     {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestWithASPNETUdemy.HypermediaFilterOptions.Filters
+namespace RestCrudApi.HypermediaFilterOptions.Filters
 {
     public class HyperMediaFilter : ResultFilterAttribute
     {

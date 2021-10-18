@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RestWithASPNETUdemy.Model.Base
+namespace RestCrudApi.Model.Base
 {
     public class BaseEntity
     {

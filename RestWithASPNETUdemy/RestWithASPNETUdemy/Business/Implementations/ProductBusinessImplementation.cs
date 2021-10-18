@@ -1,9 +1,9 @@
-﻿using RestWithASPNETUdemy.Data.Converter.Implementation;
-using RestWithASPNETUdemy.Model;
-using RestWithASPNETUdemy.Repository;
+﻿using RestCrudApi.Data.Converter.Implementation;
+using RestCrudApi.Model;
+using RestCrudApi.Repository;
 using System.Collections.Generic;
 
-namespace RestWithASPNETUdemy.Business.Implementations
+namespace RestCrudApi.Business.Implementations
 {
     public class ProductBusinessImplementation : IProductBusiness
     {

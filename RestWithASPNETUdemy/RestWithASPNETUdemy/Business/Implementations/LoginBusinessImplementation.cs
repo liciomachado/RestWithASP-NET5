@@ -1,8 +1,8 @@
-﻿using RestWithASPNETUdemy.Configurations;
-using RestWithASPNETUdemy.Data.VO;
-using RestWithASPNETUdemy.Model;
-using RestWithASPNETUdemy.Repository;
-using RestWithASPNETUdemy.Services;
+﻿using RestCrudApi.Configurations;
+using RestCrudApi.Data.VO;
+using RestCrudApi.Model;
+using RestCrudApi.Repository;
+using RestCrudApi.Services;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,7 +10,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace RestWithASPNETUdemy.Business.Implementations
+namespace RestCrudApi.Business.Implementations
 {
     public class LoginBusinessImplementation : ILoginBusiness
     {
@@ -18,7 +18,6 @@ namespace RestWithASPNETUdemy.Business.Implementations
         private TokenConfiguration _configuration;
 
         private IUserRepository _repository;
-        private readonly IRepository<User> _genericRepository;
 
         private readonly ITokenService _tokenService;
 

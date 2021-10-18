@@ -1,10 +1,10 @@
-﻿using RestWithASPNETUdemy.Data.Converter.Contract;
-using RestWithASPNETUdemy.Data.VO;
-using RestWithASPNETUdemy.Model;
+﻿using RestCrudApi.Data.Converter.Contract;
+using RestCrudApi.Data.VO;
+using RestCrudApi.Model;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RestWithASPNETUdemy.Data.Converter.Implementation
+namespace RestCrudApi.Data.Converter.Implementation
 {
     public class ProductConverter : IParser<ProductVO, Product>, IParser<Product, ProductVO>
     {

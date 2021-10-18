@@ -1,12 +1,12 @@
-﻿using RestWithASPNETUdemy.Data.VO;
-using RestWithASPNETUdemy.Model;
-using RestWithASPNETUdemy.Model.Context;
+﻿using RestCrudApi.Data.VO;
+using RestCrudApi.Model;
+using RestCrudApi.Model.Context;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace RestWithASPNETUdemy.Repository
+namespace RestCrudApi.Repository
 {
     public class UserRepository : IUserRepository
     {

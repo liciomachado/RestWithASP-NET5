@@ -1,11 +1,11 @@
-﻿using RestWithASPNETUdemy.Data.VO;
-using RestWithASPNETUdemy.Model;
+﻿using RestCrudApi.Data.VO;
+using RestCrudApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestWithASPNETUdemy.Repository
+namespace RestCrudApi.Repository
 {
     public interface IUserRepository
     {

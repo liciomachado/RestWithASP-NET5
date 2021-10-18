@@ -1,9 +1,9 @@
-﻿using RestWithASPNETUdemy.HypermediaFilterOptions;
-using RestWithASPNETUdemy.HypermediaFilterOptions.Abstract;
+﻿using RestCrudApi.HypermediaFilterOptions;
+using RestCrudApi.HypermediaFilterOptions.Abstract;
 using System;
 using System.Collections.Generic;
 
-namespace RestWithASPNETUdemy.Model
+namespace RestCrudApi.Model
 {
     public class ProductVO: ISupportsHyperMedia
     {

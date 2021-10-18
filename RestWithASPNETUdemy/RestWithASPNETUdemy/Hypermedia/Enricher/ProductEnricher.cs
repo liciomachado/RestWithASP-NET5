@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RestWithASPNETUdemy.HypermediaFilterOptions.Constants;
-using RestWithASPNETUdemy.Model;
+using RestCrudApi.HypermediaFilterOptions.Constants;
+using RestCrudApi.Model;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestWithASPNETUdemy.HypermediaFilterOptions.Enricher
+namespace RestCrudApi.HypermediaFilterOptions.Enricher
 {
     public class ProductEnricher : ContentResponseEnricher<ProductVO>
     {

@@ -1,7 +1,7 @@
-﻿using RestWithASPNETUdemy.Model;
+﻿using RestCrudApi.Model;
 using System.Collections.Generic;
 
-namespace RestWithASPNETUdemy.Business
+namespace RestCrudApi.Business
 {
     public interface IProductBusiness
     {

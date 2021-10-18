@@ -1,4 +1,4 @@
-﻿namespace RestWithASPNETUdemy.Data.Converter.Implementation
+﻿namespace RestCrudApi.Data.Converter.Implementation
 {
     public class Iparser
     {

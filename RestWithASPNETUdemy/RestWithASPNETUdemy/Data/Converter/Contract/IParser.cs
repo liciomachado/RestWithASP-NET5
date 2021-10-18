@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RestWithASPNETUdemy.Data.Converter.Contract
+namespace RestCrudApi.Data.Converter.Contract
 {
     public interface IParser<O, D>
     {

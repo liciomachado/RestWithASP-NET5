@@ -1,8 +1,8 @@
-﻿using RestWithASPNETUdemy.Data.VO;
-using RestWithASPNETUdemy.Model;
+﻿using RestCrudApi.Data.VO;
+using RestCrudApi.Model;
 using System.Collections.Generic;
 
-namespace RestWithASPNETUdemy.Business
+namespace RestCrudApi.Business
 {
     public interface IUsersBusiness
     {

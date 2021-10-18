@@ -1,4 +1,4 @@
-﻿namespace RestWithASPNETUdemy.Data.VO
+﻿namespace RestCrudApi.Data.VO
 {
     public class UserVO
     {

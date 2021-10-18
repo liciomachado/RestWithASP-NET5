@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace RestWithASPNETUdemy.Model.Context
+namespace RestCrudApi.Model.Context
 {
     public class MySqlContext :DbContext
     {
@@ -13,8 +13,6 @@ namespace RestWithASPNETUdemy.Model.Context
         { 
 
         }
-
-        public DbSet<Person> Persons { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<User> Users { get; set; }
 

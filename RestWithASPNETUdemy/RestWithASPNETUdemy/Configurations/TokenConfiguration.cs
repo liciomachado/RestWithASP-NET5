@@ -1,4 +1,4 @@
-﻿namespace RestWithASPNETUdemy.Configurations
+﻿namespace RestCrudApi.Configurations
 {
     public class TokenConfiguration
     {

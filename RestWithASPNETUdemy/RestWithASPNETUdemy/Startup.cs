@@ -5,21 +5,21 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using RestWithASPNETUdemy.Model.Context;
-using RestWithASPNETUdemy.Business;
-using RestWithASPNETUdemy.Business.Implementations;
-using RestWithASPNETUdemy.Repository;
+using RestCrudApi.Model.Context;
+using RestCrudApi.Business;
+using RestCrudApi.Business.Implementations;
+using RestCrudApi.Repository;
 using Serilog;
 using System;
 using System.Collections.Generic;
-using RestWithASPNETUdemy.Repository.Generic;
+using RestCrudApi.Repository.Generic;
 using Microsoft.Net.Http.Headers;
-using RestWithASPNETUdemy.HypermediaFilterOptions.Filters;
-using RestWithASPNETUdemy.HypermediaFilterOptions.Enricher;
+using RestCrudApi.HypermediaFilterOptions.Filters;
+using RestCrudApi.HypermediaFilterOptions.Enricher;
 using Microsoft.AspNetCore.Rewrite;
-using RestWithASPNETUdemy.Services;
-using RestWithASPNETUdemy.Services.Implementations;
-using RestWithASPNETUdemy.Configurations;
+using RestCrudApi.Services;
+using RestCrudApi.Services.Implementations;
+using RestCrudApi.Configurations;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -28,7 +28,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http;
 
-namespace RestWithASPNETUdemy
+namespace RestCrudApi
 {
     public class Startup
     {
@@ -90,7 +90,7 @@ namespace RestWithASPNETUdemy
             }));
             services.AddControllers();
             //var connection = Configuration["MySqlConnection: MySqlConnectionString"];
-            var connection = "Server=localhost;DataBase=rest_with_asp_net;Uid=root;Pwd=123321;SslMode=none;";
+            var connection = "Server=localhost;DataBase=rest_crud_api;Uid=root;Pwd=123321;SslMode=none;";
             services.AddDbContext<MySqlContext>(options => options.UseMySql(connection));
 
             if (Environment.IsDevelopment())
@@ -106,7 +106,6 @@ namespace RestWithASPNETUdemy
             }).AddXmlSerializerFormatters();
 
             var filterOptions = new HyperMediaFilterOptions();
-            filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
             filterOptions.ContentResponseEnricherList.Add(new ProductEnricher());
             services.AddSingleton(filterOptions);
 
@@ -117,27 +116,20 @@ namespace RestWithASPNETUdemy
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
-            services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
             services.AddScoped<IProductBusiness, ProductBusinessImplementation>();
             services.AddScoped<ILoginBusiness, LoginBusinessImplementation>();
 
             services.AddTransient<ITokenService, TokenService>();
 
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo 
-                { 
-                    Title = "REST API's with ASP.NET and Docker - Foo bar", 
-                    Version = "v1",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Mauricio machado",
-                        Url = new Uri("https://github.com/liciomachado")
-                    }
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "REST API's with ASP.NET",
+                    Version = "v1"
                 });
             });
         }
@@ -150,7 +142,7 @@ namespace RestWithASPNETUdemy
                 app.UseDeveloperExceptionPage();
             }
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestWithASPNETUdemy v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RestCrudApi v1"));
             var option = new RewriteOptions();
             option.AddRedirect("^$", "swagger");
             app.UseRewriter(option);

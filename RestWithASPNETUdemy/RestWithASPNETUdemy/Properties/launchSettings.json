@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "RestWithASPNETUdemy": {
+    "RestCrudApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

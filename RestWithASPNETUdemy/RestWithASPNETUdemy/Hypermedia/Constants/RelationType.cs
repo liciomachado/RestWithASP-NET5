@@ -1,4 +1,4 @@
-﻿namespace RestWithASPNETUdemy.HypermediaFilterOptions.Constants
+﻿namespace RestCrudApi.HypermediaFilterOptions.Constants
 {
     public sealed class RelationType
     {

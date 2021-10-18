@@ -5,6 +5,8 @@
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>96fcd787-4f87-4ab4-9339-60fd817fc42a</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyName>RestCrudApi</AssemblyName>
+    <RootNamespace>RestCrudApi</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
