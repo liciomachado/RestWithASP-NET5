@@ -15,6 +15,7 @@ namespace RestCrudApi.Model.Context
         }
         public DbSet<Product> Product { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
 
     }
 }

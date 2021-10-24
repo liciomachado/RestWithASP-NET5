@@ -117,6 +117,7 @@ namespace RestCrudApi
 
 
             services.AddScoped<IProductBusiness, ProductBusinessImplementation>();
+            services.AddScoped<IEnderecoBusiness, EnderecoBusinessImplementation>();
             services.AddScoped<ILoginBusiness, LoginBusinessImplementation>();
 
             services.AddTransient<ITokenService, TokenService>();
